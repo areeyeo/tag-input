@@ -6,8 +6,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/tag-input" element={<TagInputPage />} />
+        <Route path="/" element={<TagInputPage />} />
       </Routes>
     </Router>
   );
