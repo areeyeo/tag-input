@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# TagInput Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React (TypeScript) component for adding and managing multiple tags.  
+Supports Enter key, custom separator (like `,` or `-`), and adding tags on blur.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Add tags using Enter key or a custom separator (default is `,`)
+- Add tag when input loses focus (onBlur)
+- Remove tags by clicking the `×` button
+- Prevent duplicate tags
+- Limit max number of tags (via `maxTags` prop)
+- No UI libraries – all styles are manually written
+- Includes unit tests for all key features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to use
 
-### `npm test`
+```tsx
+import TagInput from './components/TagInput';
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<TagInput maxTags={5} separator="-" />
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Props
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Prop        | Type     | Default | Description                     |
+|-------------|----------|---------|---------------------------------|
+| `maxTags`   | number   | 10      | Max number of tags allowed      |
+| `separator` | string   | `,`     | Character to split tag input    |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Run the project
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+npm start
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Run tests
 
-## Learn More
+```bash
+npm test -- TagInput.test.tsx
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Test coverage
+
+- Renders correctly
+- Add tag by Enter or separator
+- Remove tag
+- Prevent duplicate tags
+- Add multiple tags at once
+- Show warning if max limit is reached
