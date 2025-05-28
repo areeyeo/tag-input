@@ -24,6 +24,7 @@ const TagInputPage: React.FC = () => {
     marginBottom: '1.5rem',
   };
 
+// Example usage of the TagInput component
   return (
     <div style={containerStyle}>
       <h1 style={headingStyle}>Tag Input Page</h1>

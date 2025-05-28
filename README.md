@@ -26,6 +26,10 @@ import TagInput from './components/TagInput';
 
 ```
 
+#### See full usage example in: src/pages/TagInputPage.tsx
+
+---
+
 ## Props
 
 | Prop        | Type     | Default | Description                     |
