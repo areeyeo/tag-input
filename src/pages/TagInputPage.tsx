@@ -27,7 +27,7 @@ const TagInputPage: React.FC = () => {
   return (
     <div style={containerStyle}>
       <h1 style={headingStyle}>Tag Input Page</h1>
-      <TagInput maxTags={5} separator="-" />
+      <TagInput maxTags={5} separator="," />
     </div>
   );
 };
